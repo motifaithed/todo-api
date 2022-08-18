@@ -4,9 +4,9 @@ async function getAllTodos(req,res,next){
     let todos
     try{
          todos = await Todo.getAllTodos();
+         
     }catch(error){
-        next(error);
-        return
+        return  next(error);
     }
 
     res.json({todos: todos});

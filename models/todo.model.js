@@ -7,7 +7,7 @@ class Todo{
         this.id = id;
     }
     static async getAllTodos(){
-       const todoDocuments =  await db.getDb.collection('todos').find().toArray();
+       const todoDocuments =  await db.getDb().collection('todos').find().toArray();
        return todoDocuments.map((todoDocument)=>{
             return new Todo(todoDocument._id, todoDocument.text);
        });
